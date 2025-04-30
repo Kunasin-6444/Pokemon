@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit";
+}
+body{
+    min-height: 100vh;
+    background-color: #5CB9FF;
+    padding: 0 32px;
+}
+.container{
+    padding: 0 24px;
+    margin: 0 88.4px;
+}
+header .logo img{
+    display: block;
+    width: 300px;
+    margin: auto;
+}
+header .nav-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+header .nav-bar .select{
+    position: relative;
+}
+header .nav-bar .select select{
+    background-color: #ffffff;
+    display: block;
+    width: 300px;
+    height: 56px;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 1em 1.5em;
+    appearance: none;
+}
+header .nav-bar .select label{
+    color: #7D7B7B;
+    font-size: 12px;
+    position: absolute;
+    background-color: #ffffff;
+    left: 15px;
+    top: 0;
+    transform: translateY(-50%);
+    padding: 0 5px;
+}
+header .nav-bar .select i{
+    color: #7D7B7B;
+    position: absolute;
+    width: 56px ;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    transition: all 0.15s ease;
+}
+header .nav-bar .select :focus ~i{
+    transform: rotate(180deg);
+}
+.grid-container{
+    --grid-gap: 10px;
+    --grid-max-col-count: 4;
+    --grid-min-col-size: 180px;
+    --grid-col-size-calc: calc((100% - var(--grid-gap) * var(--grid-max-col-count)) / var(--grid-max-col-count));
+    --grid-col-min-size-calc: max(180px,var(--grid-col-size-calc));
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(var(--grid-col-min-size-calc),1fr));
+    gap: var(--grid-gap)
+}
+.grid-container .card{
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .sequent{
+        margin-bottom: 20px;
+        color: #7D7B7B;
+    }
+    .name{
+        font-size: 1.5em;
+    }
+    .pokemon-type{
+        color: #7D7B7B;
+    }
+}
+.grid-container .card img{
+    height: 128px;
+}
+
