@@ -15,26 +15,42 @@
           <img src="/src/image/pokemon-logo.png" alt="pokemon-logo">
         </div>
         <div class="nav-bar">
-            <div class="type select">
-              <label for="type">Type</label>
-              <select name="pokemon-type" id="type">
-                <option value="Any">Any</option>
-                <option value="Bug">Fire</option>
-                <option value="Dark">Dark</option>
-                <option value="Dragon">Dragon</option>
-                <option value="Electirc">Electirc</option>
-              </select>
+          <div class="select-menu">
+            <div class="float-select-tag">Type</div>
+            <div class="select-btn">
+              <span class="sBtn-text">Type</span>
               <i class="fa-solid fa-caret-down"></i>
             </div>
-            <div class="capture select">
-              <label for="capture">Captures</label>
-              <select name="pokemon-type" id="capture">
-                <option value="Any">Any</option>
-                <option value="Captured">Captured</option>
-                <option value="Not-captured">Not-capture</option>
-              </select>
+            <ul class="options">
+              <li class="option">
+                <span class="option-text">Any</span>
+              </li>
+              <li class="option">
+                <span class="option-text">Bug</span>
+              </li>
+              <li class="option">
+                <span class="option-text">Dark</span>
+              </li>
+            </ul>
+          </div>
+          <div class="select-menu">
+            <div class="float-select-tag">Capture</div>
+            <div class="select-btn">
+              <span class="sBtn-text">Capture</span>
               <i class="fa-solid fa-caret-down"></i>
             </div>
+            <ul class="options">
+              <li class="option">
+                <span class="option-text">Any</span>
+              </li>
+              <li class="option">
+                <span class="option-text">Captured</span>
+              </li>
+              <li class="option">
+                <span class="option-text">Not Captured</span>
+              </li>
+            </ul>
+          </div>
         </div>
      </header>
      <div class="grid-container">
@@ -45,6 +61,12 @@
             </div>
             <div class="name">Ivysaur</div>
             <div class="pokemon-type">Poison, Grass</div>
+            <div class="capture-btn">
+              <div class="toggle-box-container">
+                <div class="toggle-box"></div>
+              </div>
+              <span class="toggle-text">Captured</span>
+            </div>
         </div>
         <div class="card">
           <div class="sequent">3</div>
@@ -53,6 +75,12 @@
           </div>
           <div class="name">Venusaur</div>
           <div class="pokemon-type">Poison, Grass</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">4</div>
@@ -61,6 +89,12 @@
           </div>
           <div class="name">Charmander</div>
           <div class="pokemon-type">Fire</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">5</div>
@@ -69,6 +103,12 @@
           </div>
           <div class="name">Charmeleon</div>
           <div class="pokemon-type">Fire</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">6</div>
@@ -77,6 +117,12 @@
           </div>
           <div class="name">Charizard</div>
           <div class="pokemon-type">Fire, Flying</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">7</div>
@@ -85,6 +131,12 @@
           </div>
           <div class="name">Squirtle</div>
           <div class="pokemon-type">Water</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">8</div>
@@ -93,6 +145,12 @@
           </div>
           <div class="name">Wartortle</div>
           <div class="pokemon-type">Water</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">9</div>
@@ -101,6 +159,12 @@
           </div>
           <div class="name">Blastoise</div>
           <div class="pokemon-type">Water</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">10</div>
@@ -109,6 +173,12 @@
           </div>
           <div class="name">Caterpie</div>
           <div class="pokemon-type">Bug</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
         <div class="card">
           <div class="sequent">11</div>
@@ -117,8 +187,15 @@
           </div>
           <div class="name">Metapod</div>
           <div class="pokemon-type">Bug</div>
+          <div class="capture-btn">
+            <div class="toggle-box-container">
+              <div class="toggle-box"></div>
+            </div>
+            <span class="toggle-text">Captured</span>
+          </div>
         </div>
      </div>
    </div>
+   <script src="script.js"></script>
   </body>
 </html>

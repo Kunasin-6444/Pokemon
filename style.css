@@ -5,9 +5,32 @@
     padding: 0;
     font-family: "Kanit";
 }
+html {
+    --page-background-color: #5CB9FF;
+    --nav-background-color: #ffffff;
+    --border-color: #7D7B7B;
+    --border-focus: #3F51B5;
+    --background-hover: #d7d7d7;
+    --border-focus-with-opacity:rgba(63, 81, 181, 0.678);
+    --main-font-color: #000000;
+    --toggle-button: #ffffff;
+    --card-hightlight-color: #3F51B5;
+}
+@media (prefers-color-scheme: dark) {
+    html {
+        --page-background-color: #000000;
+        --nav-background-color: #151B23;
+        --border-color: #7D7B7B;
+        --border-focus: #3F51B5;
+        --background-hover: #252C34;
+        --border-focus-with-opacity:rgba(63, 81, 181, 0.678);
+        --main-font-color: #F0F6FC;
+        --card-hightlight-color: #F0F6FC;
+    }
+  }
 body{
     min-height: 100vh;
-    background-color: #5CB9FF;
+    background-color: var(--page-background-color);
     padding: 0 32px;
 }
 .container{
@@ -23,49 +46,14 @@ header .nav-bar{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: var(--nav-background-color);
     padding: 10px;
     border-radius: 10px;
-    gap: 10px;
+    gap: 1em;
     flex-wrap: wrap;
 }
-header .nav-bar .select{
-    position: relative;
-}
-header .nav-bar .select select{
-    background-color: #ffffff;
-    display: block;
-    width: 300px;
-    height: 56px;
-    border-radius: 8px;
-    font-size: 16px;
-    padding: 1em 1.5em;
-    appearance: none;
-}
-header .nav-bar .select label{
-    color: #7D7B7B;
-    font-size: 12px;
-    position: absolute;
-    background-color: #ffffff;
-    left: 15px;
-    top: 0;
-    transform: translateY(-50%);
-    padding: 0 5px;
-}
-header .nav-bar .select i{
-    color: #7D7B7B;
-    position: absolute;
-    width: 56px ;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 0;
-    top: 0;
-    transition: all 0.15s ease;
-}
-header .nav-bar .select :focus ~i{
-    transform: rotate(180deg);
+header .nav-bar span{
+    color: var(--main-font-color);
 }
 .grid-container{
     --grid-gap: 10px;
@@ -80,24 +68,154 @@ header .nav-bar .select :focus ~i{
 }
 .grid-container .card{
     padding: 16px;
-    background-color: #ffffff;
+    background-color: var(--nav-background-color);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition:all 0.15s ease-in-out;
     .sequent{
         margin-bottom: 20px;
-        color: #7D7B7B;
+        color: var(--border-color);
     }
     .name{
         font-size: 1.5em;
+        color: var(--main-font-color);
     }
     .pokemon-type{
-        color: #7D7B7B;
+        color: var(--border-color);
     }
+}
+.grid-container .card:hover{
+    box-shadow: 0 0 5px 5px var(--card-hightlight-color);
 }
 .grid-container .card img{
     height: 128px;
+    transition: all 0.15s ease-in-out;
+}
+.grid-container .card img:hover{
+    height: 130px;
+    filter: drop-shadow(0 0 5px var(--card-hightlight-color));
 }
 
+.select-menu{
+    position: relative;
+    width: 270px;
+    border: 2px solid  var(--border-color);
+    border-radius: 8px;
+    /* margin: 150px auto;  */
+}
+.select-menu.active{
+    border: 2px solid  var(--border-focus);
+    .float-select-tag{
+        color: var(--border-focus);
+    }
+}
+.select-menu .select-btn{
+    display: flex;
+    height: 55px;
+    background: var(--nav-background-color);
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    position: relative;
+}
+.select-menu .float-select-tag{
+    z-index: 2;
+    color: var(--border-color);
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: var(--nav-background-color);
+    position: absolute;
+    left: 15px;
+    top:0;
+    transform: translateY(-50%);
+}
+.select-btn i{
+    font-size: 20px;
+    color: var(--border-color);
+}
+.select-menu.active .select-btn i{
+    transform: rotate(180deg);
+}
+.select-btn .sBtn-text{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.select-menu .options{
+    position: absolute;
+    top: 110%;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    border-radius: 8px;
+    background: var(--nav-background-color);
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.15);
+    display: none;
+}
+.select-menu.active .options{
+    display: block;
+}
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: var(--nav-background-color);
+}
+.options .option:hover{
+    background: var(--background-hover); 
+}
+.option .option-text{
+    font-size: 18px;
+}
+.capture-btn{
+    display: flex;
+    margin-top: 18px;
+    align-items: center;
+    gap: 0.2em;
+}
+.toggle-box-container{
+    position: relative;
+}
+.capture-btn .toggle-box{
+    width: 35px;
+    height: 14px;
+    background-color: var(--border-color);
+    border-radius: 7px;
+    cursor: pointer;
+}
+.capture-btn .toggle-box::before{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    box-shadow: 0 1px 2px 2px rgba(0,0,0,0.15);
+    inset-inline-start: 7px;
+    inset-block-start: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--toggle-button);
+}
+.capture-btn .toggle-box:hover:before{
+        box-shadow: 0 0 4px 4px rgba(0,0,0,0.15);
+}
+.toggle-box.active::before{
+        inset-inline-start: none;
+        right: 7px;
+        transform: translate(60%,-50%);
+        background-color: var(--border-focus);
+}
+.toggle-box.active{
+    background-color: rgba(63, 81, 181, 0.678);
+}
+.toggle-text{
+    color: var(--main-font-color);
+}
